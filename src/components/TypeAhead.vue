@@ -261,6 +261,13 @@
 
     mounted () {
       /***
+      * If the user is using router so it will call after parent mounted. 
+      * The heirarcy of vue-router is parent mounted -> child mounted.
+      * So, we have to set the value of query with current value.
+      */
+      this.query = this.value;
+    
+      /***
        * 使得其点击之外的部分自动收起
        */
       document.addEventListener('click', (e) => {
